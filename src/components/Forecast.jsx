@@ -18,7 +18,7 @@ const Forecast = ({ forecast, theme }) => {
             <DayCard key={index} condition={condition.toLowerCase()}>
               <div>{day}</div>
               <div>{temp}°C</div>
-              <WeatherIcon theme={theme} src={`https://openweathermap.org/img/wn/${icon}@4x.png`} alt="" />
+              <WeatherIcon theme={theme} src={`https://openweathermap.org/img/wn/${icon}@4x.png`}/>
               <div>{condition}</div>
             </DayCard>
           );

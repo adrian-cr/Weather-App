@@ -3,7 +3,7 @@ import WeatherCard from "./WeatherCard";
 import Forecast from "./Forecast";
 import {Wrapper} from "../styles";
 
-const API_KEY = "05974b4b75ba8d5bd5e39c34c3de0a87"; // Replace with your actual OpenWeatherMap API key
+const API_KEY = "05974b4b75ba8d5bd5e39c34c3de0a87";
 const CITY = "Guadalajara";
 
 
@@ -32,12 +32,9 @@ const WeatherApp = () => {
         const currentData = await resCurrent.json();
         const forecastRaw = await resForecast.json();
 
-        // Extract daily forecasts (every 8th item = approx 1 day)
         const dailyForecasts = forecastRaw.list.filter((_, index) => index % 8 === 0);
-/*         const dailyForecasts = staticForecast.list.filter((_, index) => index % 8 === 0);
- */
+
         setWeatherData(currentData);
-        //setWeatherData(staticCurrent);
         setForecastData(dailyForecasts);
       } catch (err) {
         setError(err.message);
